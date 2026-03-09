@@ -1,0 +1,39 @@
+{
+  "name": "@omni-log/log-web",
+  "version": "0.1.0",
+  "author": "curry.ma",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "node": "./dist/esm.js",
+        "default": "./dist/esm.js"
+      },
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "rimraf dist && run-p dev-types dev-watch dev-watch-esm",
+    "dev-types": "tsc -p . -w --incremental --emitDeclarationOnly",
+    "dev-watch": "esbuild src/index.ts --watch --bundle --platform=node --target=node12 --outfile=dist/index.js",
+    "dev-watch-esm": "esbuild src/index.ts --watch --format=esm --bundle --platform=node --target=node12 --outfile=dist/esm.js",
+    "build": "rimraf dist && run-s build-bundle build-bundle-esm build-types",
+    "build-bundle": "esbuild src/index.ts --bundle --platform=node --target=node12 --outfile=dist/index.js",
+    "build-bundle-esm": "esbuild src/index.ts --bundle --format=esm --platform=node --target=node12 --outfile=dist/esm.js",
+    "patch-dist": "ts-node ../../scripts/patchEsbuildDist.ts dist/index.js vuePlugin",
+    "build-types": "tsc -p . --emitDeclarationOnly --outDir temp && api-extractor run && rimraf temp",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@omni-log/log-core": "file:../log-core",
+    "@types/ua-parser-js": "^0.7.36",
+    "ua-parser-js": "^1.0.35",
+    "web-vitals": "^4.2.3"
+  }
+}

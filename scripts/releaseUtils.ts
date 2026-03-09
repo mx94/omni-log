@@ -1,6 +1,3 @@
-/**
- * modified from https://github.com/vuejs/core/blob/master/scripts/release.js
- */
 import colors from 'picocolors'
 import type { Options as ExecaOptions } from 'execa'
 import execa from 'execa'
@@ -8,6 +5,8 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs'
 import path from 'path'
 import type { ReleaseType } from 'semver'
 import semver from 'semver'
+import prompts from 'prompts'
+
 
 export const args = require('minimist')(process.argv.slice(2))
 
@@ -148,10 +147,14 @@ export async function publishPackage(
   pkdDir: string,
   tag?: string
 ): Promise<void> {
+  const { otp }: { otp: string } = await prompts({
+    type: 'text',
+    name: 'otp',
+    message: 'Enter npm OTP (leave blank if 2FA not enabled)'
+  })
   const publicArgs = ['publish', '--access', 'public']
-  if (tag) {
-    publicArgs.push(`--tag`, tag)
-  }
+  if (tag) publicArgs.push('--tag', tag)
+  if (otp) publicArgs.push('--otp', otp)
   await runIfNotDry('npm', publicArgs, {
     stdio: 'pipe',
     cwd: pkdDir

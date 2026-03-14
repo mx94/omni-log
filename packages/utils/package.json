@@ -2,6 +2,13 @@
   "name": "@omni-log/utils",
   "version": "0.1.0",
   "author": "curry.ma",
+  "license": "Apache-2.0",
+  "keywords": [
+    "utils",
+    "log",
+    "report",
+    "monitor"
+  ],
   "files": [
     "dist"
   ],

@@ -1,7 +1,22 @@
 {
   "name": "@omni-log/log-mini",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "curry.ma",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mx94/omni-log.git"
+  },
+  "homepage": "https://github.com/mx94/omni-log",
+  "keywords": [
+    "miniprogram",
+    "log",
+    "report",
+    "wechat",
+    "alipay",
+    "logger",
+    "monitor"
+  ],
   "files": [
     "dist"
   ],

@@ -152,10 +152,10 @@ export async function publishPackage(
     name: 'otp',
     message: 'Enter npm OTP (leave blank if 2FA not enabled)'
   })
-  const publicArgs = ['publish', '--access', 'public']
+  const publicArgs = ['publish', '--access', 'public', '--no-git-checks']
   if (tag) publicArgs.push('--tag', tag)
   if (otp) publicArgs.push('--otp', otp)
-  await runIfNotDry('npm', publicArgs, {
+  await runIfNotDry('pnpm', publicArgs, {
     stdio: 'pipe',
     cwd: pkdDir
   })

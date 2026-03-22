@@ -1,5 +1,8 @@
 # omni-log
 
+[![npm downloads](https://img.shields.io/npm/dm/@omni-log/log-mini.svg?label=%40omni-log%2Flog-mini%20downloads)](https://www.npmjs.com/package/@omni-log/log-mini)
+[![npm downloads](https://img.shields.io/npm/dm/@omni-log/log-web.svg?label=%40omni-log%2Flog-web%20downloads)](https://www.npmjs.com/package/@omni-log/log-web)
+
 面向小程序（微信 / 支付宝）和 Web（H5）的多端日志 SDK，**零侵入、自动采集、统一上报**。
 
 ---
@@ -81,8 +84,8 @@ log.pushLog('12', '下单成功', { orderId: 'xxx', amount: 99 })
 
 | 包名 | 描述 | npm |
 | --- | --- | --- |
-| [`@omni-log/log-mini`](./packages/log-mini) | 小程序端 SDK（微信 / 支付宝） | [![npm](https://img.shields.io/npm/v/@omni-log/log-mini)](https://www.npmjs.com/package/@omni-log/log-mini) |
-| [`@omni-log/log-web`](./packages/log-web) | Web / H5 端 SDK | [![npm](https://img.shields.io/npm/v/@omni-log/log-web)](https://www.npmjs.com/package/@omni-log/log-web) |
+| [`@omni-log/log-mini`](./packages/log-mini) | 小程序端 SDK（微信 / 支付宝） | [![npm](https://img.shields.io/npm/v/@omni-log/log-mini)](https://www.npmjs.com/package/@omni-log/log-mini) <br> [![npm downloads](https://img.shields.io/npm/dm/@omni-log/log-mini.svg)](https://www.npmjs.com/package/@omni-log/log-mini) |
+| [`@omni-log/log-web`](./packages/log-web) | Web / H5 端 SDK | [![npm](https://img.shields.io/npm/v/@omni-log/log-web)](https://www.npmjs.com/package/@omni-log/log-web) <br> [![npm downloads](https://img.shields.io/npm/dm/@omni-log/log-web.svg)](https://www.npmjs.com/package/@omni-log/log-web) |
 | [`@omni-log/log-core`](./packages/log-core) | 核心层 | — |
 
 ---
@@ -103,4 +106,4 @@ pnpm run build-log
 
 ## License
 
-[MIT](./LICENSE)
+[Apache-2.0](./LICENSE)

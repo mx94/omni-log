@@ -2,6 +2,14 @@
   "name": "@omni-log/log-core",
   "version": "0.1.0",
   "author": "curry.ma",
+  "license": "Apache-2.0",
+  "keywords": [
+    "core",
+    "log",
+    "report",
+    "logger",
+    "monitor"
+  ],
   "files": [
     "dist"
   ],

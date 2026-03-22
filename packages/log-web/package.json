@@ -2,6 +2,20 @@
   "name": "@omni-log/log-web",
   "version": "0.1.1",
   "author": "curry.ma",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mx94/omni-log.git"
+  },
+  "homepage": "https://github.com/mx94/omni-log",
+  "keywords": [
+    "web",
+    "browser",
+    "log",
+    "report",
+    "logger",
+    "monitor"
+  ],
   "files": [
     "dist"
   ],

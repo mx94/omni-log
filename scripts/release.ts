@@ -93,11 +93,16 @@ async function main(): Promise<void> {
     step('\nCommitting changes...')
     await runIfNotDry('git', ['add', '-A'])
     await runIfNotDry('git', ['commit', '-m', `release: ${tag}`])
-    await runIfNotDry('git', ['tag', tag])
+    // tag 已存在时跳过，不中断发布
+    try {
+      await runIfNotDry('git', ['tag', tag])
+    } catch (e) {
+      console.log(colors.yellow(`Tag ${tag} already exists, skipping...`))
+    }
   } else {
     console.log('No changes to commit.')
-    return
   }
+
 
   step('\nPushing to GitHub...')
   await runIfNotDry('git', ['push', 'origin', `refs/tags/${tag}`])
